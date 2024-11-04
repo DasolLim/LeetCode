@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/LeetCode/static/css/main.7551d9aa.css",
+    "main.js": "/LeetCode/static/js/main.91385d64.js",
+    "static/js/453.77aef9b5.chunk.js": "/LeetCode/static/js/453.77aef9b5.chunk.js",
+    "index.html": "/LeetCode/index.html",
+    "main.7551d9aa.css.map": "/LeetCode/static/css/main.7551d9aa.css.map",
+    "main.91385d64.js.map": "/LeetCode/static/js/main.91385d64.js.map",
+    "453.77aef9b5.chunk.js.map": "/LeetCode/static/js/453.77aef9b5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7551d9aa.css",
+    "static/js/main.91385d64.js"
+  ]
+}
