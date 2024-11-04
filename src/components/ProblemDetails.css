@@ -1,0 +1,35 @@
+.problem-details-page {
+    padding: 1em;
+    color: #f5f5f5;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+}
+
+.problem-details-page h2 {
+    color: #ffa500;
+    margin-bottom: 1em;
+}
+
+.problem-details-page pre {
+    background-color: #1d1d1d;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-top: 1em;
+}
+
+.back-button {
+    padding: 0.5em 1em;
+    background-color: #1e90ff;
+    border: none;
+    color: #f5f5f5;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ffa500;
+}

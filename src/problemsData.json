@@ -1,0 +1,100 @@
+[
+  {
+    "id": "ArrayString-CanPlaceFlower",
+    "category": "ArrayString",
+    "title": "CanPlaceFlower",
+    "solution": "class Solution(object):\r\n    def canPlaceFlowers(self, flowerbed, n):\r\n        # for base case of [0,0,1]\r\n        f = [0] + flowerbed + [0]\r\n\r\n        for i in range(1, len(f) -1): # skip first and last\r\n            # adjacent 0s\r\n            if f[i-1] == 0 and f[i] == 0 and f[i+1] == 0:\r\n                f[i] = 1\r\n                n -= 1\r\n                # early return\r\n                if n <= 0:\r\n                    return True\r\n                \r\n        return n <= 0\r\n\r\n                \r\n        ",
+    "comments": []
+  },
+  {
+    "id": "ArrayString-KidWithTheGreatestNumberOfCandies",
+    "category": "ArrayString",
+    "title": "KidWithTheGreatestNumberOfCandies",
+    "solution": "class Solution(object):\r\n    def kidsWithCandies(self, candies, extraCandies):\r\n        greatest = max(candies)\r\n\r\n        for i in range(len(candies)):\r\n            if candies[i] + extraCandies >= greatest:\r\n                candies[i] = True\r\n            else:\r\n                candies[i] = False\r\n        return candies\r\n\r\n        # Alternative \r\n        # return [(i + extraCandies >= greatest) for i in candies]",
+    "comments": []
+  },
+  {
+    "id": "ArrayString-NumberOfGoodPairs",
+    "category": "ArrayString",
+    "title": "NumberOfGoodPairs",
+    "solution": "class Solution(object):\r\n    def numIdenticalPairs(self, nums):\r\n        n = len(nums)\r\n        counter = Counter(nums)\r\n        good_pairs = 0\r\n\r\n        for i, n in enumerate(nums):\r\n            counter[n] -= 1\r\n            good_pairs += counter[n]\r\n\r\n        return good_pairs\r\n        ",
+    "comments": []
+  },
+  {
+    "id": "ArrayString-ReverseString",
+    "category": "ArrayString",
+    "title": "ReverseString",
+    "solution": "class Solution(object):\r\n    def reverseVowels(self, s):\r\n        s = list(s)\r\n        vowels = set(\"aeiouAEIOU\")\r\n\r\n        i, j = 0, len(s)-1\r\n\r\n        while(i<j):\r\n            if(s[i] not in vowels):\r\n                i += 1\r\n            elif(s[j] not in vowels):\r\n                j -= 1\r\n            else:\r\n                s[i], s[j] = s[j], s[i]\r\n                i += 1\r\n                j -= 1\r\n\r\n        return \"\".join(s)",
+    "comments": []
+  },
+  {
+    "id": "ArrayString-ReverseWordsInAString",
+    "category": "ArrayString",
+    "title": "ReverseWordsInAString",
+    "solution": "\r\nclass Solution(object):\r\n    def reverseWords(self, s):\r\n        reverse = [word for word in s.split(\" \") if word]\r\n        return \" \".join(reverse[::-1])",
+    "comments": []
+  },
+  {
+    "id": "HashmapSet-FindTheDifferenceOfTwoArrays",
+    "category": "HashmapSet",
+    "title": "FindTheDifferenceOfTwoArrays",
+    "solution": "class Solution(object):\r\n    def findDifference(self, nums1, nums2):\r\n        h_nums1, h_nums2 = set(nums1), set(nums2)\r\n        res1, res2 = set(), set() # does not contain duplicates\r\n\r\n        for n in nums1:\r\n            # add if distinct\r\n            if n not in h_nums2:\r\n                res1.add(n)\r\n\r\n        for n in nums2:\r\n            # add if distinct\r\n            if n not in h_nums1:\r\n                res2.add(n)\r\n\r\n        # convert to hashmap to array\r\n        return [list(res1), list(res2)]\r\n        ",
+    "comments": []
+  },
+  {
+    "id": "HashmapSet-UniqueNumberOfOccurrences",
+    "category": "HashmapSet",
+    "title": "UniqueNumberOfOccurrences",
+    "solution": "class Solution(object):\r\n    def uniqueOccurrences(self, arr):\r\n        # Counter(): count the occurrences of elements\r\n        # Ex: arr = [1,2,2,1,1,3]\r\n        # counter = {{1:3, 2:2, 1:1}} <- dictionary \r\n        # since dictionary allow duplicates\r\n        counter = Counter(arr)\r\n\r\n        # if no Counter()\r\n        # counter = {}\r\n        # for i in arr:\r\n        #     if i in counter():\r\n        #         counter[i] += 1\r\n        #     else:\r\n        #         counter[i] = 1\r\n\r\n        h = set()\r\n\r\n        # iterate through the occurences, counter.values()\r\n        # check for duplicate\r\n        for i in counter.values():\r\n            if i in h:\r\n                return False\r\n            else:\r\n                h.add(i)\r\n\r\n        return True\r\n        ",
+    "comments": []
+  },
+  {
+    "id": "PrefixSum-FindPivotIndex",
+    "category": "PrefixSum",
+    "title": "FindPivotIndex",
+    "solution": "class Solution(object):\r\n    def pivotIndex(self, nums):\r\n        l_sum = 0   \r\n        total = sum(nums)\r\n\r\n        for i in range(len(nums)):\r\n            r_sum = total - nums[i] - l_sum\r\n            if l_sum == r_sum:\r\n                return i\r\n            l_sum += nums[i]\r\n        \r\n        return -1\r\n            \r\n            \r\n",
+    "comments": []
+  },
+  {
+    "id": "PrefixSum-FindTheHighestAltitude",
+    "category": "PrefixSum",
+    "title": "FindTheHighestAltitude",
+    "solution": "class Solution(object):\r\n    def largestAltitude(self, gain):\r\n        max_alt = 0\r\n        alt = 0\r\n\r\n        for i in range(len(gain)):\r\n            alt += 0 + gain[i]\r\n            max_alt = max(max_alt, alt)\r\n\r\n        return max_alt",
+    "comments": []
+  },
+  {
+    "id": "Queue-NumberOfRecentCalls",
+    "category": "Queue",
+    "title": "NumberOfRecentCalls",
+    "solution": "from collections import deque\r\n\r\nclass RecentCounter:\r\n\r\n    def __init__(self):\r\n        self.q = deque()\r\n\r\n    def ping(self, t):\r\n        self.q.append(t)\r\n        # Remove all elements that are outside the [t - 3000, t] range\r\n        while self.q[0] < t - 3000:\r\n            self.q.popleft()\r\n        return len(self.q)\r\n\r\n# Example usage:\r\n# obj = RecentCounter()\r\n# param_1 = obj.ping(t)\r\n",
+    "comments": []
+  },
+  {
+    "id": "SlidingWindow-MaximumAverageSubarray",
+    "category": "SlidingWindow",
+    "title": "MaximumAverageSubarray",
+    "solution": "class Solution(object):\r\n    def findMaxAverage(self, nums, k):\r\n        # n = len(nums)\r\n        # cur_avg = 0\r\n        # max_avg = 0\r\n\r\n        if k == 1 and len(nums) == 1:\r\n            return nums[0]/float(k)\r\n\r\n        # initial sliding window array average 0 -> k\r\n        # for i in range(k):\r\n        #     cur_avg += nums[i]\r\n        # max_avg = cur_avg/float(k)\r\n\r\n        cur_window = sum(nums[:k])    \r\n        max_window = cur_window\r\n\r\n        # k -> len(nums) by adding next int and removing 'first' int\r\n        for i in range(k, len(nums)):\r\n            cur_window += nums[i] - nums[i-k] # add the next integers and remove the 'first' integers\r\n            max_window = max(max_window, cur_window)\r\n    \r\n        return max_window/float(k)\r\n\r\n            \r\n            \r\n\r\n        ",
+    "comments": []
+  },
+  {
+    "id": "TwoPointers-ContainerWithMostWater",
+    "category": "TwoPointers",
+    "title": "ContainerWithMostWater",
+    "solution": "class Solution(object):\r\n    def maxArea(self, height):\r\n        n = len(height)\r\n        l = 0\r\n        r = n - 1\r\n        max_area = 0\r\n\r\n        while l < r:\r\n            w = r - l \r\n            # h = min(height[l], height[r])\r\n            # area = w * h \r\n            \r\n            if height[l] < height[r]: # calculate using min(height[l], height[r])\r\n                area = w * height[l]\r\n                l += 1\r\n            else:\r\n                area = w * height[r]\r\n                r -= 1\r\n\r\n            # max_area = max(max_area, area)\r\n            if area > max_area:\r\n                max_area = area\r\n\r\n            # if height[l] < height[r]:\r\n            #     l += 1\r\n            # else: \r\n            #     r -= 1\r\n\r\n        return max_area\r\n        ",
+    "comments": []
+  },
+  {
+    "id": "TwoPointers-IsSequence",
+    "category": "TwoPointers",
+    "title": "IsSequence",
+    "solution": "class Solution(object):\r\n    def isSubsequence(self, s, t):\r\n\r\n        # empty string\r\n        if not s:  \r\n            return True\r\n\r\n        r = 0\r\n\r\n        for c in range(len(t)):\r\n            if s[r] == t[c]:\r\n                r += 1\r\n            \r\n            # if all s is in t\r\n            if r == len(s):\r\n                return True\r\n        \r\n        # check if s is in t\r\n        return r == len(s)\r\n",
+    "comments": []
+  },
+  {
+    "id": "TwoPointers-MoveZeros",
+    "category": "TwoPointers",
+    "title": "MoveZeros",
+    "solution": "# Move Zeros Solution\r\nclass Solution(object):\r\n    def moveZeroes(self, nums):\r\n        l = 0 \r\n        # use right to iterate\r\n        for r in range(len(nums)):\r\n            if nums[r]:\r\n                #swap\r\n                nums [l], nums[r] = nums[r], nums[l]\r\n                # increment\r\n                l += 1\r\n        return nums\r\n\r\n        ",
+    "comments": []
+  }
+]

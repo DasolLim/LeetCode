@@ -1,0 +1,148 @@
+.problem-list {
+    padding: 1em;
+    color: #f5f5f5;
+    background-color: #2d2d2d;
+}
+
+.category-section {
+    margin-bottom: 2em;
+    border-radius: 8px 8px 0 0;
+    /* Rounded top corners */
+    overflow: hidden;
+    /* Clips child elements to fit rounded corners */
+    background-color: #2d2d2d;
+    /* Background matches overall container */
+}
+
+.category-title {
+    color: #ffa500;
+    padding: 1em;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #333;
+    /* Background color for title */
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+    /* Rounds only the top corners */
+    border-bottom: 3px solid #ffa500;
+    /* Orange bottom border */
+}
+
+.category-section ul {
+    list-style: none;
+    /* Removes the default bullet */
+    padding: 0;
+    /* Removes default padding */
+    margin: 0;
+    /* Removes default margin */
+}
+
+.problem-item {
+    margin: 1.5em 0;
+    /* Adds vertical spacing between problem blocks */
+    padding: 1em;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Slight shadow for depth */
+}
+
+.problem-item h4 {
+    color: #00ff7f;
+    /* Adjusted for green title color */
+    font-size: 1em;
+    margin: 0;
+}
+
+.problem-item pre {
+    background-color: #333;
+    color: #eee;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-top: 1em;
+}
+
+.comments-section {
+    margin-top: 1em;
+}
+
+.comment-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+.comment-text {
+    margin: 0;
+    padding: 0.5em;
+    background-color: #444;
+    border-radius: 4px;
+    color: #eee;
+}
+
+.comment-item .timestamp {
+    font-size: 0.8em;
+    color: #aaa;
+    margin-top: 0.3em;
+}
+
+.comment-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5em;
+    margin-top: 0.5em;
+}
+
+.comment-buttons button {
+    padding: 0.2em 0.5em;
+    font-size: 0.8em;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comment-buttons button:last-of-type {
+    background-color: #ff4d4d;
+}
+
+.comment-buttons button:hover {
+    opacity: 0.8;
+}
+
+.add-comment-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.add-comment-section textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 4px;
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #444;
+    resize: none;
+}
+
+.add-comment-btn {
+    padding: 0.4em 0.8em;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.add-comment-btn:hover {
+    opacity: 0.8;
+}
