@@ -7,7 +7,7 @@ import ProblemDetails from './components/ProblemDetails';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/LeetCode">
       <Navbar />
       <div className="content">
         <Routes>
