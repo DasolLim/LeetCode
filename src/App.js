@@ -11,6 +11,7 @@ function App() {
       <Navbar />
       <div className="content">
         <Routes>
+          {/* Display ProblemList Content */}
           <Route path="/" element={<ProblemList />} />
           <Route path="/problem/:id" element={<ProblemDetails />} />
         </Routes>
