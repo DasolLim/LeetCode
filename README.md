@@ -1,4 +1,4 @@
-# Leetcode Solution Website
+# LeetCode Solution Website
 
 ![image](https://github.com/user-attachments/assets/ff3cfa57-cd46-4495-bc93-058e75bec5c3)
 
