@@ -1,7 +1,7 @@
+![image](https://github.com/user-attachments/assets/ff3cfa57-cd46-4495-bc93-058e75bec5c3)
+
 🐍 LeetCode Solutions Website
 A sleek and interactive React-based website showcasing Python solutions for the LeetCode problems I’ve solved. Explore problem descriptions, view solutions, and read comments all in one place!
-
-![image](https://github.com/user-attachments/assets/ff3cfa57-cd46-4495-bc93-058e75bec5c3)
 
 🚀 Features
 Problem List: View a list of solved LeetCode problems.
